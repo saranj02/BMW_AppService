@@ -62,14 +62,16 @@ namespace BMW_AppService
 
         protected void AlertMessage(string msg)
         {
-            string message = msg;
-            string script = "function(){ alert('";
-            script += message;
-            script += "');";
-            script += "window.location = '";
-            script += Request.Url.AbsoluteUri;
-            script += "'; }";
-            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+            //string message = msg;
+            //string script = "function(){ alert('";
+            //script += message;
+            //script += "');";
+            //script += "window.location = '";
+            //script += Request.Url.AbsoluteUri;
+            //script += "'; }";
+            //ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+            MessageBox.Show(msg);
+            Response.Redirect(Request.Url.AbsoluteUri);
         }
         protected void InsertBtn_Click(object sender, EventArgs e)
         {
